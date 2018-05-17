@@ -8,7 +8,9 @@
   <script src="../../js/jquery.min.js"></script>
   <script src="../../js/bootstrap.min.js"></script>
   <style>
-  
+  .list{
+  width:60%;
+  }
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -151,13 +153,13 @@ input[type=text], input[type=password] {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="./index.html">Logo</a>
+      <a class="navbar-brand" href="../../../index.html">Logo</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./index.html">Home</a></li>
-        <li><a href="./template/html/about/about.html">About</a></li>
-        <li><a href="./template/html/about.html">List</a></li>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../about/index.html">About</a></li>
+        <li class="active"><a href="./index.html">List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
@@ -192,26 +194,54 @@ input[type=text], input[type=password] {
     </div>
   </div>
 </nav>
-  
 <div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="./index.html">Main</a></p>
-      <p><a href="./index.html">Notice</a></p>
-    </div>
-    <div class="col-sm-8 text-left">
-    <a href="./list.html">This is a link</a>
-      <hr>
-    </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
-  </div>
+	<div class="row content">
+		<div class="col-sm-2 sidenav">
+      		<p><a href="./index.html">Main</a></p>
+      		<p><a href="./index.html">Notice</a></p>
+    	</div>
+    		<div class="col-sm-8 text-left">
+				<table class ="table">
+				<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>날짜</th>
+					<th>조회수</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>165</td>
+					<td>봐라</td>
+					<td>임인호</td>
+					<td>2018.01.01</td>
+					<td>5</td>
+				</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<a class="btn btn-default pull-right" href = "./write.html">글쓰기</a>
+			<div class ="text-center">
+				<ul class="pagination">
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="col-sm-2 sidenav">
+				<div class="well">
+					<p>ADS</p>
+		      	</div>
+		    <div class="well">
+				<p>ADS</p>
+		    </div>
+		</div>
+	</div>
 </div>
 
 <footer class="container-fluid text-center">
