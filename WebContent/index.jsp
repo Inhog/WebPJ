@@ -2,13 +2,12 @@
 <html>
 <head>
   <title>Bootstrap Example</title>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./template/css/bootstrap.min.css">
   <script src="./template/js/jquery.min.js"></script>
   <script src="./template/js/bootstrap.min.js"></script>
   <style>
-  
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -151,44 +150,46 @@ input[type=text], input[type=password] {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="./index.html">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="./index.html">Home</a></li>
-        <li><a href="./template/html/About/index.html">About</a></li>
-        <li><a href="./template/html/List/index.html">List</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" glyphicon glyphicon-log-in>Login</button>
-	<div id="id01" class="modal">
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="./template/images/login.png" alt="login" >
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div></a></li>
-      </ul>
-    </div>
+      	<a class="navbar-brand" href="./index.html">Logo</a>
+   		</div>
+    	<div class="collapse navbar-collapse" id="myNavbar">
+      		<ul class="nav navbar-nav">
+        		<li class="active"><a href="./index.html">Home</a></li>
+        		<li><a href="./template/html/About/index.html">About</a></li>
+        		<li><a href="./template/html/List/index.html">List</a></li>
+      		</ul>
+      		<ul class="nav navbar-nav navbar-right">
+      		<%
+                    	String userID=(String)session.getAttribute("uname");
+                    	System.out.println("Session userID: "+userID);
+                    	if(userID != null){
+                    %>
+                    <li><a href="./JSP/sessionDelete.jsp"><%=userID %></a></li>
+        			<% }else{ %>
+        		<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+        			<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" glyphicon glyphicon-log-in>Login</button>
+					<div id="id01" class="modal">
+  						<form class="modal-content animate" action="./JSP/sessionStatus.jsp">
+    						<div class="imgcontainer">
+      							<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      							<img src="./template/images/login.png" alt="login" >
+    						</div>
+    						<div class="container">
+					        	<label for="uname"><b>Username</b></label>
+      							<input type="text" placeholder="Enter Username" name="uname" required>
+      							<label for="psw"><b>Password</b></label>
+      							<input type="password" placeholder="Enter Password" name="psw" required>
+        					    <button type="submit">Login</button>
+    						</div>
+    						<div class="container" style="background-color:#f1f1f1">
+      							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      							<span class="psw">Forgot <a href="#">password?</a></span>
+    						</div>
+  						</form>
+					</div></a></li>
+                    <% }	%>
+      		</ul>
+    	</div>
   </div>
 </nav>
 <div class="container-fluid text-center">    
@@ -198,8 +199,8 @@ input[type=text], input[type=password] {
       <p><a href="./index.html">Notice</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>타이틀</h1>
-      <p>텍스트.</p>
+      <h1>Get Out</h1>
+      <p>Greatest English</p>
       <hr>
     </div>
     <div class="col-sm-2 sidenav">
@@ -229,6 +230,5 @@ window.onclick = function(event) {
     }
 }
 </script>
-
 </body>
 </html>
